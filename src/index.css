@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    --neon-cyan: #22d3ee;
+    --neon-magenta: #f472b6;
+    --dark-bg: #050505;
+  }
+
+  body {
+    background-color: var(--dark-bg);
+    color: #f1f5f9; /* slate-100 */
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .neon-border {
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.1);
+  }
+  
+  .neon-text-cyan {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.5);
+  }
+  
+  .neon-text-pink {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 8px rgba(244, 114, 182, 0.5);
+  }
+
+  .game-grid {
+    background-image: 
+      linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neon-cyan);
+  border-radius: 10px;
+}
